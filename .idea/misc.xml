@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/drawable/rounded_button_blue.xml" value="0.1195" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/drawable/rounded_button_create.xml" value="0.1195" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_login.xml" value="0.536" />
       </map>
     </option>
   </component>
