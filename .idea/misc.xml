@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1665" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/drawable/rounded_button_blue.xml" value="0.1195" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/drawable/rounded_button_create.xml" value="0.1195" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_birthday.xml" value="0.8" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_choose_password.xml" value="1.1111111111111112" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_contact_number.xml" value="1.1111111111111112" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_join_facebook.xml" value="1.2" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_login.xml" value="0.536" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_terms_privacy.xml" value="1.1111111111111112" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_what_your_birthday.xml" value="1.2" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_what_your_gender.xml" value="1.1081081081081081" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_what_your_name.xml" value="1.2" />
       </map>
     </option>
   </component>
