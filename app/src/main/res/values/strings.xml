@@ -12,4 +12,7 @@
     <string name="sign_up">Sign up</string>
     <string name="finishing_singing_up">Finishing singing up</string>
     <string name="terms_privacy"><![CDATA[Terms & privacy]]></string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="custom">Custom</string>
 </resources>
