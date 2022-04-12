@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.facebookclone.R
-import com.example.facebookclone.view.login.LoginActivity
+import com.example.facebookclone.view.register.JoinFacebookActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(SplashScreenActivity@this, LoginActivity::class.java))
+            startActivity(Intent(SplashScreenActivity@this, JoinFacebookActivity::class.java))
         }, 2000)
     }
 }

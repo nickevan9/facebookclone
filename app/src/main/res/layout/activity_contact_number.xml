@@ -39,6 +39,15 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.001dp"
+        android:background="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline21"
         android:layout_width="wrap_content"
@@ -100,12 +109,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/guideline23"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
-        app:layout_constraintTop_toTopOf="@+id/guideline24">
+        app:layout_constraintTop_toTopOf="@+id/guideline24"
+        app:endIconDrawable="@drawable/ic_baseline_close_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mobile number" />
+            android:background="@color/white"
+            android:hint="Mobile number"
+            android:drawableEnd="@drawable/ic_baseline_close_24"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,17 +129,30 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button_blue"
         android:text="@string/next"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/guideline23"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
         app:layout_constraintTop_toTopOf="@+id/guideline13" />
+
+    <TextView
+        android:id="@+id/tv_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_150sdp"
+        android:text="Create account with Email"
+        android:textColor="#384CFF"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/guideline23"
+        app:layout_constraintStart_toStartOf="@+id/guideline22" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

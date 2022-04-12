@@ -84,7 +84,7 @@
         app:layout_constraintGuide_percent="0.85" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_blue"
@@ -114,7 +114,8 @@
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
+        android:background="#AAAAAA"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -137,7 +138,8 @@
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
-        android:layout_height="2dp"
+        android:layout_height="0.5dp"
+        android:background="#AAAAAA"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.5"
