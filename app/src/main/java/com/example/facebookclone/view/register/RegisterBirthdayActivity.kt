@@ -3,10 +3,13 @@ package com.example.facebookclone.view.register
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.chivorn.datetimeoptionspicker.DateTimePickerView
 import com.example.facebookclone.R
+import com.example.facebookclone.model.User
+import com.example.facebookclone.utils.KEY_USER
 import kotlinx.android.synthetic.main.activity_register_birthday.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -14,18 +17,31 @@ import java.util.*
 class RegisterBirthdayActivity : AppCompatActivity() {
 
     private var pvTime: DateTimePickerView? = null
+    private var user : User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_birthday)
 
-        btn_next.setOnClickListener {
-                val i = Intent(this@RegisterBirthdayActivity,WhatYourGenderActivity::class.java)
-                startActivity(i)
-        }
+        Log.d("atvname", "onCreate: + ${intent.extras?.get(KEY_USER)}")
+
+        user = intent.extras?.get(KEY_USER) as User
 
 
         initTimePicker()
+
+        btn_next.setOnClickListener {
+            user?.birthday = "14/12/1997"
+            val bundle = Bundle()
+            bundle.putSerializable(KEY_USER,user)
+            val i = Intent(this@RegisterBirthdayActivity,WhatYourGenderActivity::class.java)
+            i.putExtras(bundle)
+            startActivity(i)
+        }
+
+        im_back.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initTimePicker() {
@@ -36,8 +52,7 @@ class RegisterBirthdayActivity : AppCompatActivity() {
         endDate[2019, 11] = 28
         pvTime = DateTimePickerView.Builder(
             this
-        ) { date, v -> //选中事件回调
-            Toast.makeText(this,getTime(date),Toast.LENGTH_SHORT).show()
+        ) { date, v ->Toast.makeText(this,getTime(date),Toast.LENGTH_SHORT).show()
         }
             .setLayoutRes(
                 R.layout.datetimeoptionspicker_custom_time

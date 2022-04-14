@@ -15,43 +15,47 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".CreateNewPasswordActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".OtpVerificationActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.register.ContactEmailActivity"
-            android:exported="false" />
+
+        <activity android:name=".view.register.CreateNewPasswordActivity" />
+
+        <activity android:name=".view.register.OtpVerificationActivity"/>
+
 
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".view.register.RegisterBirthdayActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".view.register.RegisterBirthdayActivity">
+
         </activity>
 
-        <activity android:name=".view.register.WhatYourNameActivity"/>
-        <activity android:name=".view.register.JoinFacebookActivity"/>
+        <activity android:name=".view.register.WhatYourNameActivity" />
+        <activity android:name=".view.register.JoinFacebookActivity" />
+
+        <activity android:name=".view.login.ProfileLoginActivity">
+
+        </activity>
+
+        <activity
+            android:name=".view.register.ForgotPasswordEmailActivity">
+
+        </activity>
+
+        <activity
+            android:name=".view.register.ForgotPasswordMobileActivity">
+
+        </activity>
+
+        <activity android:name=".view.register.WhatYourGenderActivity" />
+        <activity android:name=".view.register.ContactEmailActivity" />
+        <activity android:name=".view.register.ContactNumberActivity" />
+        <activity android:name=".view.register.ChoosePasswordActivity" />
+        <activity android:name=".view.register.TermAndPrivacyActivity" />
     </application>
 
 </manifest>

@@ -1,7 +1,8 @@
-package com.example.facebookclone
+package com.example.facebookclone.view.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.facebookclone.R
 
 class OtpVerificationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
