@@ -34,9 +34,9 @@ class WhatYourNameActivity:AppCompatActivity() {
 
         }
 
-        til_first_name.setEndIconOnClickListener {
-            ed_first_name.setText("")
-        }
+//        til_first_name.setEndIconOnClickListener {
+//            ed_first_name.setText("")
+//        }
 
         im_back.setOnClickListener {
             finish()

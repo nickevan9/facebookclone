@@ -20,6 +20,7 @@ class ContactEmailActivity : AppCompatActivity() {
 
     private var user : User? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_email)
@@ -33,7 +34,7 @@ class ContactEmailActivity : AppCompatActivity() {
             if(atemail.isNotEmpty()){
                 val bundle = Bundle()
                 bundle.putSerializable(KEY_USER,user)
-                val i =Intent(this@ContactEmailActivity, ChoosePasswordActivity::class.java)
+                val i =Intent(this@ContactEmailActivity, OtpVerificationActivity::class.java)
                 i.putExtras(bundle)
                 startActivity(i)
             }else{
@@ -63,4 +64,6 @@ class ContactEmailActivity : AppCompatActivity() {
             finish()
         }
     }
+
+
 }

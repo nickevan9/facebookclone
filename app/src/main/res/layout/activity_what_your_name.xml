@@ -132,7 +132,8 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            app:endIconDrawable="@drawable/ic_baseline_close_24">
+            app:endIconDrawable="@drawable/ic_baseline_close_24"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ed_first_name"
@@ -140,6 +141,11 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:hint="First name"
+                android:imeOptions="actionNext"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="1"
                 android:textSize="@dimen/_12ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -150,15 +156,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            app:endIconDrawable="@drawable/ic_baseline_close_24">
+            app:endIconDrawable="@drawable/ic_baseline_close_24"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ed_last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:drawableEnd="@drawable/ic_baseline_close_24"
                 android:hint="Last name"
+                android:imeOptions="actionDone"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="2"
                 android:textSize="@dimen/_12ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>

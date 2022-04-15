@@ -34,7 +34,8 @@
 
         </activity>
 
-        <activity android:name=".view.register.WhatYourNameActivity" />
+        <activity android:name=".view.register.WhatYourNameActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".view.register.JoinFacebookActivity" />
 
         <activity android:name=".view.login.ProfileLoginActivity">
@@ -51,10 +52,15 @@
 
         </activity>
 
-        <activity android:name=".view.register.WhatYourGenderActivity" />
-        <activity android:name=".view.register.ContactEmailActivity" />
-        <activity android:name=".view.register.ContactNumberActivity" />
-        <activity android:name=".view.register.ChoosePasswordActivity" />
+        <activity android:name=".view.register.WhatYourGenderActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".view.register.ContactEmailActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".view.register.ContactNumberActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".view.register.ChoosePasswordActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".view.register.TermAndPrivacyActivity" />
     </application>
 

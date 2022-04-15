@@ -54,4 +54,6 @@ dependencies {
     // datetime picker
     implementation 'com.github.chivorns:datetimeoptionspicker:1.0.1'
 
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+
 }

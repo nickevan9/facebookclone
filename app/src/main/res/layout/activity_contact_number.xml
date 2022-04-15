@@ -111,7 +111,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline23"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
         app:layout_constraintTop_toTopOf="@+id/guideline24"
-        app:endIconDrawable="@drawable/ic_baseline_close_24">
+        app:endIconDrawable="@drawable/ic_baseline_close_24"
+        app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/te_number"
@@ -119,7 +120,12 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:hint="Mobile number"
-            android:drawableEnd="@drawable/ic_baseline_close_24"/>
+            android:imeOptions="actionDone"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:text="+84393397641"
+            android:singleLine="true"
+            android:inputType="phone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
