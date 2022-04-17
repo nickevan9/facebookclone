@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.facebookclone.R
 import com.example.facebookclone.model.User
 import com.example.facebookclone.utils.KEY_USER
+import com.example.facebookclone.utils.KEY_VERIFIED_ID
+import com.example.facebookclone.view.dialog.LoadingDialog
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -28,8 +30,8 @@ class ContactNumberActivity : AppCompatActivity() {
     private var user: User? = null
 
     private lateinit var auth: FirebaseAuth
-    private var storedVerificationId: String? = ""
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
+    private var loadingDialog : LoadingDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +46,10 @@ class ContactNumberActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        loadingDialog = LoadingDialog(this);
+
         btn_next.setOnClickListener {
+            loadingDialog?.showDialog()
             user?.phoneNumber = te_number.text.toString().trim()
             val atphoneNumber = te_number.text.toString().trim()
 //            if(atphoneNumber.isNotEmpty()){
@@ -89,20 +94,36 @@ class ContactNumberActivity : AppCompatActivity() {
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
                 Log.d("hunghkp", "onVerificationCompleted: ")
+                val code = p0.smsCode
+                if (code != null) {
+                    Log.d("hunghkp", "onVerificationCompleted: $code")
+                }
             }
 
             override fun onVerificationFailed(p0: FirebaseException) {
                 Log.d("hunghkp", "onVerificationFailed: ")
+                loadingDialog?.dismissDialog()
+                Toast.makeText(this@ContactNumberActivity, p0.message, Toast.LENGTH_SHORT).show()
             }
 
             override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
                 super.onCodeSent(p0, p1)
-                Log.d("hunghkp", "onCodeSent: $p0")
+
+                val bundle = Bundle()
+                bundle.putSerializable(KEY_USER, user)
+                bundle.putString(KEY_VERIFIED_ID,p0)
+
+                val i = Intent(this@ContactNumberActivity, OtpVerificationActivity::class.java)
+                i.putExtras(bundle)
+                loadingDialog?.dismissDialog()
+                startActivity(i)
+
             }
 
             override fun onCodeAutoRetrievalTimeOut(p0: String) {
                 super.onCodeAutoRetrievalTimeOut(p0)
                 Log.d("hunghkp", "onCodeAutoRetrievalTimeOut: ")
+
             }
 
         }
