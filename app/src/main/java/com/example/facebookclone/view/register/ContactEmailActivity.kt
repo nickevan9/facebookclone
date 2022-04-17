@@ -8,6 +8,8 @@ import android.widget.Toast
 import com.example.facebookclone.R
 import com.example.facebookclone.model.User
 import com.example.facebookclone.utils.KEY_USER
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_contact_email.*
 import kotlinx.android.synthetic.main.activity_contact_email.iv_back
 import kotlinx.android.synthetic.main.activity_contact_email.tv_create
@@ -19,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_what_your_name.*
 class ContactEmailActivity : AppCompatActivity() {
 
     private var user : User? = null
-
+    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,4 +68,16 @@ class ContactEmailActivity : AppCompatActivity() {
     }
 
 
+    private fun sendEmailVerification() {
+        // [START send_email_verification]
+        val user = Firebase.auth.currentUser
+
+        user!!.sendEmailVerification()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "Email sent.")
+                }
+            }
+        // [END send_email_verification]
+    }
 }
