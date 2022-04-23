@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.facebookclone.R
 import com.example.facebookclone.model.User
 import com.example.facebookclone.utils.KEY_USER
-import kotlinx.android.synthetic.main.activity_register_birthday.*
-import kotlinx.android.synthetic.main.activity_register_birthday.im_back
 import kotlinx.android.synthetic.main.activity_terms_privacy.*
 
 class TermAndPrivacyActivity : AppCompatActivity(){

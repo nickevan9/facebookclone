@@ -11,12 +11,6 @@ import com.example.facebookclone.utils.KEY_USER
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_contact_email.*
-import kotlinx.android.synthetic.main.activity_contact_email.iv_back
-import kotlinx.android.synthetic.main.activity_contact_email.tv_create
-import kotlinx.android.synthetic.main.activity_contact_number.*
-import kotlinx.android.synthetic.main.activity_register_birthday.*
-import kotlinx.android.synthetic.main.activity_register_birthday.btn_next
-import kotlinx.android.synthetic.main.activity_what_your_name.*
 
 class ContactEmailActivity : AppCompatActivity() {
 
@@ -48,16 +42,11 @@ class ContactEmailActivity : AppCompatActivity() {
         tv_create.setOnClickListener {
             user?.email= te_email.text.toString().trim()
             val atemail = te_email.text.toString().trim()
-            if(atemail.isNotEmpty()){
-                val bundle = Bundle()
-                bundle.putSerializable(KEY_USER,user)
-                val j = Intent( this@ContactEmailActivity, ContactNumberActivity::class.java)
-                j.putExtras(bundle)
-                startActivity(j)
-            }else{
-                Toast.makeText(this,"Please enter your email", Toast.LENGTH_SHORT).show()
-            }
-
+            val bundle = Bundle()
+            bundle.putSerializable(KEY_USER,user)
+            val j = Intent( this@ContactEmailActivity, ContactNumberActivity::class.java)
+            j.putExtras(bundle)
+            startActivity(j)
         }
 
 

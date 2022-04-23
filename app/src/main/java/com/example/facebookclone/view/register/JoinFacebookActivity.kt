@@ -16,5 +16,9 @@ class JoinFacebookActivity: AppCompatActivity() {
             val i = Intent(this@JoinFacebookActivity, WhatYourNameActivity::class.java)
             startActivity(i)
         }
+
+        im_back.setOnClickListener {
+            finish()
+        }
     }
 }

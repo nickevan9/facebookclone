@@ -10,9 +10,6 @@ import com.example.facebookclone.R
 import com.example.facebookclone.model.User
 import com.example.facebookclone.utils.KEY_USER
 import kotlinx.android.synthetic.main.activity_what_your_gender.*
-import kotlinx.android.synthetic.main.activity_what_your_name.*
-import kotlinx.android.synthetic.main.activity_what_your_name.btn_next
-import kotlinx.android.synthetic.main.activity_what_your_name.im_back
 
 class WhatYourGenderActivity:AppCompatActivity() {
 

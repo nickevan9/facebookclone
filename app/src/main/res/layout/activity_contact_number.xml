@@ -88,12 +88,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:text="Enter the the mobile number where you can be reached \n No one else will see this on profile"
+        android:text="Enter the the mobile number where you can be reached\n No one else will see this on profile"
         android:textAlignment="center"
         android:textColor="#999999"
-        android:textSize="@dimen/_12sdp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintEnd_toStartOf="@+id/guideline23"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
         app:layout_constraintTop_toTopOf="@+id/guideline21" />
 
@@ -123,7 +122,7 @@
             android:imeOptions="actionDone"
             android:maxLength="12"
             android:maxLines="1"
-            android:text="+84393397641"
+            android:text=""
             android:singleLine="true"
             android:inputType="phone"/>
 
@@ -140,7 +139,6 @@
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button_blue"
         android:text="@string/next"
         android:textAllCaps="false"
@@ -149,18 +147,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
         app:layout_constraintTop_toTopOf="@+id/guideline13" />
-
-    <TextView
-        android:id="@+id/tv_create"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_150sdp"
-        android:text="Create account with Email"
-        android:textColor="#384CFF"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline13"
-        app:layout_constraintEnd_toStartOf="@+id/guideline23"
-        app:layout_constraintStart_toStartOf="@+id/guideline22" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,9 +47,9 @@ class RegisterBirthdayActivity : AppCompatActivity() {
     private fun initTimePicker() {
         val selectedDate = Calendar.getInstance()
         val startDate = Calendar.getInstance()
-        startDate[2013, 0] = 23
+        startDate[1900, 1] = 1
         val endDate = Calendar.getInstance()
-        endDate[2019, 11] = 28
+        endDate[2022, 12] = 31
         pvTime = DateTimePickerView.Builder(
             this
         ) { date, v ->Toast.makeText(this,getTime(date),Toast.LENGTH_SHORT).show()
