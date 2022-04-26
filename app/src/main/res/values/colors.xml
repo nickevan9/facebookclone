@@ -12,6 +12,7 @@
     //color general project
     <color name="general_blue">#384CFF</color>
     <color name="general_grey">#AAAAAA</color>
+    <color name="general_bull">#999999</color>
 
 
     //color option home

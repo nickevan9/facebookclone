@@ -60,6 +60,7 @@ class HomeFragment : Fragment() {
         optionsAdapter = OptionsHomeAdapter(requireContext(), listOptions = listOption()){optionsHome ->
 
         }
+
         rv_home.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         rv_home.setHasFixedSize(true)
         rv_home.adapter = optionsAdapter

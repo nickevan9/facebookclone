@@ -37,6 +37,7 @@
     <string name="title_notifications">Notifications</string>
 
     //POST_HOME
-    <string name="et_hint_thinking"><font size="30">What are you thinking?</font></string>
+    <string name="et_hint_thinking"><font size="24">What are you thinking?</font></string>
+
 
 </resources>

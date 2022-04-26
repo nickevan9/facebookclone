@@ -49,7 +49,7 @@
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_login.xml" value="0.152" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_object_post_home.xml" value="0.176" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_otp_verification.xml" value="0.2" />
-        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_posts_home.xml" value="0.136" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_posts_home.xml" value="0.2" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_profile_login.xml" value="0.2" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_register_birthday.xml" value="0.2" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_register_birthday_activity.xml" value="0.8" />
@@ -58,6 +58,7 @@
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_what_your_birthday.xml" value="1.2" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_what_your_gender.xml" value="0.176" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/activity_what_your_name.xml" value="0.176" />
+        <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/bottom_sheet_home.xml" value="0.15789473684210525" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/datetimeoptionspicker_custom_time.xml" value="0.176" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/dialog_loading.xml" value="0.152" />
         <entry key="..\:/OneDrive/ITANDROID/facebook_clone/app/src/main/res/layout/fragment_home.xml" value="0.176" />

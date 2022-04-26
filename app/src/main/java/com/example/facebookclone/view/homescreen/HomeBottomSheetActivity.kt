@@ -7,6 +7,6 @@ import com.example.facebookclone.R
 class HomeBottomSheetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_bottom_sheet)
+        setContentView(R.layout.bottom_sheet_home)
     }
 }

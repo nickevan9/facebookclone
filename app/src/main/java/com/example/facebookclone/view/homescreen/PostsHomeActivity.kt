@@ -2,6 +2,8 @@ package com.example.facebookclone.view.homescreen
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.widget.SlidingDrawer
 import androidx.appcompat.app.AppCompatActivity
 
 import com.example.facebookclone.R
@@ -33,15 +35,23 @@ class PostsHomeActivity : AppCompatActivity() {
         im_post_more.setOnClickListener {
             clickOpenBottomSheetDialog()
         }
+        if(et_thinking_pos.text.isNotEmpty()){
+            btn_post.isEnabled = true
+        }
     }
     private fun clickOpenBottomSheetDialog(){
         val dialog = BottomSheetDialog(this)
-        val view = layoutInflater.inflate(R.layout.activity_home_bottom_sheet,null)
+        val view = layoutInflater.inflate(R.layout.bottom_sheet_home,null)
         dialog.behavior.isHideable = true
         dialog.behavior.isFitToContents = true
         dialog.behavior.state = (BottomSheetBehavior.STATE_HALF_EXPANDED)
         dialog.setContentView(view)
         dialog.show()
+
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        return super.onTouchEvent(event)
 
     }
 
