@@ -31,5 +31,12 @@
     <string name="notify">Notify</string>
     <string name="menu">Menu</string>
     <string name="login">Login</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    //POST_HOME
+    <string name="et_hint_thinking"><font size="30">What are you thinking?</font></string>
 
 </resources>

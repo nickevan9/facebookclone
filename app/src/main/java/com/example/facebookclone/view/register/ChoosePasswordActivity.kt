@@ -14,7 +14,7 @@ import com.example.facebookclone.model.User
 import com.example.facebookclone.model.UserSaved
 import com.example.facebookclone.utils.KEY_USER
 import com.example.facebookclone.view.dialog.LoadingDialog
-import com.example.facebookclone.view.homescreen.HomeScreenActivity
+import com.example.facebookclone.view.homescreen.HomeActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_choose_password.*
@@ -90,10 +90,12 @@ class ChoosePasswordActivity : AppCompatActivity() {
                             userRepository?.insert(userSaved)
                         }
                         val i =
-                            Intent(this@ChoosePasswordActivity, HomeScreenActivity::class.java)
+                            Intent(this@ChoosePasswordActivity, HomeActivity::class.java)
+                        i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                         i.putExtras(bundle)
                         loadingDialog?.dismissDialog()
                         startActivity(i)
+                        finish()
                     }
                     .addOnFailureListener { e ->
                         loadingDialog?.dismissDialog()

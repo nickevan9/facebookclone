@@ -8,4 +8,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ViewLine">#AAAAAA</color>
+
+    //color general project
+    <color name="general_blue">#384CFF</color>
+    <color name="general_grey">#AAAAAA</color>
+
+
+    //color option home
+    <color name="color_reel">#FEF9E7</color>
+    <color name="color_room">#ECF9EC</color>
+    <color name="color_group">#FEEEE5</color>
+    <color name="color_live">#EDF0FC</color>
+    <color name="black_mode">#000000</color>
 </resources>

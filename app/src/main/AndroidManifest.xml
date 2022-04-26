@@ -10,12 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Facebookclone">
         <activity
-            android:name=".view.homescreen.HomeScreenActivity"
-            android:exported="true">
-         
-        </activity>
+            android:name=".view.homescreen.HomeBottomSheetActivity"
+            android:exported="false" />
         <activity
-            android:name=".view.SplashScreenActivity"
+            android:name=".view.homescreen.ObjectPostHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.homescreen.PostsHomeActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".view.homescreen.HomeActivity" /> -->
+        <activity
+            android:name=".view.homescreen.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,14 +31,14 @@
         <activity android:name=".view.register.CreateNewPasswordActivity" />
         <activity android:name=".view.register.OtpVerificationActivity" />
         <activity android:name=".view.login.LoginActivity" />
-        <activity android:name=".view.register.RegisterBirthdayActivity"></activity>
+        <activity android:name=".view.register.RegisterBirthdayActivity" />
         <activity
             android:name=".view.register.WhatYourNameActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".view.register.JoinFacebookActivity" />
-        <activity android:name=".view.login.ProfileLoginActivity"></activity>
-        <activity android:name=".view.register.ForgotPasswordEmailActivity"></activity>
-        <activity android:name=".view.register.ForgotPasswordMobileActivity"></activity>
+        <activity android:name=".view.login.ProfileLoginActivity" />
+        <activity android:name=".view.register.ForgotPasswordEmailActivity" />
+        <activity android:name=".view.register.ForgotPasswordMobileActivity" />
         <activity
             android:name=".view.register.WhatYourGenderActivity"
             android:windowSoftInputMode="adjustPan" />

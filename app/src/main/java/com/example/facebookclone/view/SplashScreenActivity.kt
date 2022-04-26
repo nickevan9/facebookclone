@@ -25,12 +25,14 @@ class SplashScreenActivity : AppCompatActivity() {
         if (userRepository?.allUsers!!.isEmpty()){
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(Intent(SplashScreenActivity@this, LoginActivity::class.java))
+                finish()
             }, 2000)
             // dieu huong login
 
         }else{
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(Intent(SplashScreenActivity@this, ProfileLoginActivity::class.java))
+                finish()
             }, 2000)
             // dieu huong man chon user
         }

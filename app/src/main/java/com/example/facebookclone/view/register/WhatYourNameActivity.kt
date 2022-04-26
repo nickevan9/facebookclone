@@ -20,7 +20,7 @@ class WhatYourNameActivity:AppCompatActivity() {
             val lastName = ed_last_name.text.toString().trim()
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty()){
-                val user = User(id = 0, firstName =  firstName,lastName = lastName,
+                val user = User( firstName =  firstName,lastName = lastName,
                     phoneNumber = "", gender = 0, birthday = "", email = "", password = "", photoUrl = ""
                 )
 
