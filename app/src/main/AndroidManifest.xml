@@ -10,17 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Facebookclone">
         <activity
-            android:name=".view.homescreen.HomeBottomSheetActivity"
+            android:name=".view.join.joinhome.HomeBottomSheetActivity"
             android:exported="false" />
         <activity
-            android:name=".view.homescreen.ObjectPostHomeActivity"
+            android:name=".view.join.joinhome.ObjectPostHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.homescreen.PostsHomeActivity"
+            android:name=".view.join.joinhome.PostsHomeActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".view.homescreen.HomeActivity" /> -->
         <activity
-            android:name=".view.homescreen.HomeActivity"
+            android:name=".view.join.JoinActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,8 +37,8 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".view.register.JoinFacebookActivity" />
         <activity android:name=".view.login.ProfileLoginActivity" />
-        <activity android:name=".view.register.ForgotPasswordEmailActivity" />
-        <activity android:name=".view.register.ForgotPasswordMobileActivity" />
+        <activity android:name=".view.forgotpassword.ForgotPasswordEmailActivity" />
+        <activity android:name=".view.forgotpassword.ForgotPasswordMobileActivity" />
         <activity
             android:name=".view.register.WhatYourGenderActivity"
             android:windowSoftInputMode="adjustPan" />

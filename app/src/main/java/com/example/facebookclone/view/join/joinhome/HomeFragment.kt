@@ -1,4 +1,4 @@
-package com.example.facebookclone
+package com.example.facebookclone.view.join.joinhome
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.facebookclone.R
 import com.example.facebookclone.model.OptionsHome
 import com.example.facebookclone.view.adapter.OptionsHomeAdapter
-import com.example.facebookclone.view.homescreen.PostsHomeActivity
+import com.example.facebookclone.view.join.joinhome.PostsHomeActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 // TODO: Rename parameter arguments, choose names that match

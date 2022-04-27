@@ -12,7 +12,7 @@ import com.example.facebookclone.model.UserSaved
 import com.example.facebookclone.utils.COLLECTION_PATH_USER
 import com.example.facebookclone.view.adapter.ProfileUserAdapter
 import com.example.facebookclone.view.dialog.LoadingDialog
-import com.example.facebookclone.view.homescreen.HomeActivity
+import com.example.facebookclone.view.join.JoinActivity
 import com.example.facebookclone.view.register.WhatYourNameActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
@@ -58,7 +58,7 @@ class ProfileLoginActivity : AppCompatActivity() {
                         val user = document.toObject<User>()
                         if (user?.password == userCast.password) {
                             //login
-                            val login = Intent(this, HomeActivity::class.java)
+                            val login = Intent(this, JoinActivity::class.java)
                             loadingDialog?.dismissDialog()
                             startActivity(login)
                             finish()

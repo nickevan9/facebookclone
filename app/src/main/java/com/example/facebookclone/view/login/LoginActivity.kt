@@ -7,8 +7,8 @@ import com.example.facebookclone.R
 import com.example.facebookclone.model.User
 import com.example.facebookclone.utils.COLLECTION_PATH_USER
 import com.example.facebookclone.view.dialog.LoadingDialog
-import com.example.facebookclone.view.homescreen.HomeActivity
-import com.example.facebookclone.view.register.ForgotPasswordMobileActivity
+import com.example.facebookclone.view.join.JoinActivity
+import com.example.facebookclone.view.forgotpassword.ForgotPasswordMobileActivity
 import com.example.facebookclone.view.register.JoinFacebookActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
                             val user = document.toObject<User>()
                             if (user?.password == password) {
                                 //login
-                                val login = Intent(this, HomeActivity::class.java)
+                                val login = Intent(this, JoinActivity::class.java)
                                 loadingDialog?.dismissDialog()
                                 startActivity(login)
                                 finish()

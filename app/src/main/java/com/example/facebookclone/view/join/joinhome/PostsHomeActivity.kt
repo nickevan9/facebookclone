@@ -1,9 +1,8 @@
-package com.example.facebookclone.view.homescreen
+package com.example.facebookclone.view.join.joinhome
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
-import android.widget.SlidingDrawer
 import androidx.appcompat.app.AppCompatActivity
 
 import com.example.facebookclone.R
@@ -24,7 +23,7 @@ class PostsHomeActivity : AppCompatActivity() {
 
     private fun initview(){
         ln_object_post.setOnClickListener {
-            val intent =Intent(this,ObjectPostHomeActivity::class.java)
+            val intent =Intent(this, ObjectPostHomeActivity::class.java)
             startActivity(intent)
         }
 

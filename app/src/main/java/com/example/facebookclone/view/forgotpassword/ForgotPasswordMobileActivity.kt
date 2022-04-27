@@ -1,4 +1,4 @@
-package com.example.facebookclone.view.register
+package com.example.facebookclone.view.forgotpassword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
