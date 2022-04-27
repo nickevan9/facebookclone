@@ -34,7 +34,7 @@ class RegisterBirthdayActivity : AppCompatActivity() {
             user?.birthday = "14/12/1997"
             val bundle = Bundle()
             bundle.putSerializable(KEY_USER,user)
-            val i = Intent(this@RegisterBirthdayActivity,WhatYourGenderActivity::class.java)
+            val i = Intent(this@RegisterBirthdayActivity, WhatYourGenderActivity::class.java)
             i.putExtras(bundle)
             startActivity(i)
         }

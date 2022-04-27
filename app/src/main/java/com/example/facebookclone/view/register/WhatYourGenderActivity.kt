@@ -1,9 +1,7 @@
 package com.example.facebookclone.view.register
 
 import android.content.Intent
-import android.graphics.RegionIterator
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.facebookclone.R

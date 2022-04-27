@@ -1,12 +1,12 @@
-package com.example.facebookclone.view.register
+package com.example.facebookclone.view.join.joinhome
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.facebookclone.R
 
-class ForgotPasswordEmailActivity : AppCompatActivity() {
+class HomeBottomSheetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_password_email)
+        setContentView(R.layout.bottom_sheet_home)
     }
 }
