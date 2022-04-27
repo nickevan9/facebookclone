@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.facebookclone">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,30 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Facebookclone">
         <activity
-            android:name=".view.storyView.ChooseImageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.SplashScreenActivity"
-            android:exported="true">
+            android:name=".view.customview.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- <activity -->
+        <!-- android:name=".view.storyView.ChooseImageActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".view.storyView.chooseimage.ChooseImageActivity"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity android:name=".view.register.CreateNewPasswordActivity" />
         <activity android:name=".view.register.OtpVerificationActivity" />
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false" />
-        <activity android:name=".view.register.RegisterBirthdayActivity"></activity>
+        <activity android:name=".view.register.RegisterBirthdayActivity" />
         <activity
             android:name=".view.register.WhatYourNameActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".view.register.JoinFacebookActivity" />
-        <activity android:name=".view.login.ProfileLoginActivity"></activity>
-        <activity android:name=".view.register.ForgotPasswordEmailActivity"></activity>
-        <activity android:name=".view.register.ForgotPasswordMobileActivity"></activity>
+        <activity android:name=".view.login.ProfileLoginActivity" />
+        <activity android:name=".view.register.ForgotPasswordEmailActivity" />
+        <activity android:name=".view.register.ForgotPasswordMobileActivity" />
         <activity
             android:name=".view.register.WhatYourGenderActivity"
             android:windowSoftInputMode="adjustPan" />

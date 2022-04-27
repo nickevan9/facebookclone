@@ -1,0 +1,41 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_block"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+
+    </RelativeLayout>
+
+    <!-- Here comes my bottom sheet.
+         It is wrapped inside a FrameLayout, because an include cannot
+         have a behaviour. The included layout is every layout you
+         can imagine - mine is a RelativeLayout with two EditTexts
+         for example. The layout_behaviour is the second important line.  -->
+    <FrameLayout
+        android:id="@+id/container_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e3e3e3"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@android:color/holo_red_dark"
+            />
+
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
