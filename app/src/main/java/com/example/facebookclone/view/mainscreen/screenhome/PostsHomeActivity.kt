@@ -1,4 +1,4 @@
-package com.example.facebookclone.view.join.joinhome
+package com.example.facebookclone.view.mainscreen.screenhome
 
 import android.content.Intent
 import android.os.Bundle

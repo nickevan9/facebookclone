@@ -14,7 +14,7 @@ import com.example.facebookclone.model.User
 import com.example.facebookclone.model.UserSaved
 import com.example.facebookclone.utils.KEY_USER
 import com.example.facebookclone.view.dialog.LoadingDialog
-import com.example.facebookclone.view.join.JoinActivity
+import com.example.facebookclone.view.mainscreen.MainScreenActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_choose_password.*
@@ -90,7 +90,7 @@ class ChoosePasswordActivity : AppCompatActivity() {
                             userRepository?.insert(userSaved)
                         }
                         val i =
-                            Intent(this@ChoosePasswordActivity, JoinActivity::class.java)
+                            Intent(this@ChoosePasswordActivity, MainScreenActivity::class.java)
                         i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                         i.putExtras(bundle)
                         loadingDialog?.dismissDialog()

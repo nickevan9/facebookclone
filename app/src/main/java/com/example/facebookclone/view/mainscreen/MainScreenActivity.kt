@@ -1,4 +1,4 @@
-package com.example.facebookclone.view.join
+package com.example.facebookclone.view.mainscreen
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_home.*
 
 
-class JoinActivity : AppCompatActivity() {
+class MainScreenActivity : AppCompatActivity() {
 
     private val titles = arrayOf("Movies", "Events", "Tickets", "Tickets", "Tickets", "Tickets")
 

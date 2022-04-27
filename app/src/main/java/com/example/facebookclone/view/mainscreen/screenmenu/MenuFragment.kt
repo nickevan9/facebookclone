@@ -1,4 +1,4 @@
-package com.example.facebookclone.view.join.joinmenu
+package com.example.facebookclone.view.mainscreen.screenmenu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
