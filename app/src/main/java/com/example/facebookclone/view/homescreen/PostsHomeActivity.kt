@@ -2,22 +2,21 @@ package com.example.facebookclone.view.homescreen
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MotionEvent
-import android.widget.SlidingDrawer
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-
 import com.example.facebookclone.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import kotlinx.android.synthetic.main.activity_posts_home.*
+import kotlinx.android.synthetic.main.activity_create_post.*
+import kotlinx.android.synthetic.main.layout_bottom_create_post.*
 
 
 class PostsHomeActivity : AppCompatActivity() {
 
+    private var bottomSheetBehavior: BottomSheetBehavior<*>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_posts_home)
-        clickOpenBottomSheetDialog()
+        setContentView(R.layout.activity_create_post)
         initview()
     }
 
@@ -33,27 +32,47 @@ class PostsHomeActivity : AppCompatActivity() {
         }
 
         im_post_more.setOnClickListener {
-            clickOpenBottomSheetDialog()
+            card_menu.visibility = View.VISIBLE
+            ln_options_post_home.visibility = View.GONE
+            bottomSheetBehavior?.state = BottomSheetBehavior.STATE_EXPANDED
         }
         if(et_thinking_pos.text.isNotEmpty()){
             btn_post.isEnabled = true
         }
+
+        initBottomSheet()
     }
-    private fun clickOpenBottomSheetDialog(){
-        val dialog = BottomSheetDialog(this)
-        val view = layoutInflater.inflate(R.layout.bottom_sheet_home,null)
-        dialog.behavior.isHideable = true
-        dialog.behavior.isFitToContents = true
-        dialog.behavior.state = (BottomSheetBehavior.STATE_HALF_EXPANDED)
-        dialog.setContentView(view)
-        dialog.show()
+
+    private fun initBottomSheet(){
+        bottomSheetBehavior = BottomSheetBehavior.from(card_menu)
+
+        bottomSheetBehavior?.peekHeight = 200
+
+        bottomSheetBehavior?.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior?.state = BottomSheetBehavior.STATE_EXPANDED
+
+        bottomSheetBehavior?.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when (newState) {
+                    BottomSheetBehavior.STATE_DRAGGING, BottomSheetBehavior.STATE_EXPANDED -> {
+
+                    }
+                    BottomSheetBehavior.STATE_COLLAPSED -> {
+                        card_menu.visibility = View.GONE
+                        ln_options_post_home.visibility = View.VISIBLE
+                    }
+                    else -> {
+                    }
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+            }
+        })
 
     }
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-        return super.onTouchEvent(event)
-
-    }
 
 
 }
