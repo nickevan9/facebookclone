@@ -4,16 +4,14 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
+import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -27,7 +25,6 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_create_post.*
 import kotlinx.android.synthetic.main.layout_bottom_create_post.*
 import kotlinx.android.synthetic.main.layout_menu_bottom_create_post.*
-import java.io.ByteArrayOutputStream
 import java.io.File
 
 
@@ -35,12 +32,12 @@ class CreatePostsActivity : AppCompatActivity() {
     val storage = Firebase.storage
     private var bottomSheetBehavior: BottomSheetBehavior<*>? = null
     private val storageRef = Firebase.storage.reference
+    private val listDownloadUri = mutableListOf<String>()
 
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
             val intent = result.data
             val data = intent?.getStringExtra("KEY_PATH_IMAGE")
-
 
             Glide.with(this).load(data).into(img_pick)
             img_pick.visibility = View.VISIBLE
@@ -49,43 +46,43 @@ class CreatePostsActivity : AppCompatActivity() {
             card_menu.visibility = View.GONE
             ln_options_post_home.visibility = View.VISIBLE
 
-//                        val riversRef = storageRef.child("post/${file.lastPathSegment}")
-//            img_pick.isDrawingCacheEnabled = true
-//            img_pick.buildDrawingCache()
-//            val bitmap = (img_pick.drawable as BitmapDrawable).bitmap
-//            val bitmap = BitmapFactory.decodeResource(getResources(),
-//                R.drawable.ic_add_)
-//            val baos = ByteArrayOutputStream()
-////            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-//            val dataq = baos.toByteArray()
-//
-//            var uploadTask = storageRef.putBytes(dataq)
-//            uploadTask.addOnFailureListener {
-//                Log.d("thaonh", ":${it.message} ")
-//                // Handle unsuccessful uploads
-//            }.addOnSuccessListener { taskSnapshot ->
-//                // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-//                Log.d("thaonh", ":addOnSuccessListener ")
-//                // ...
-//            }
+            val filePath = getRealPathFromUri(this,Uri.parse(data));
 
-            var file = Uri.fromFile(File(data))
-            Log.d("thaonh", "${file.toString()}")
-            val riversRef = storageRef.child("post/${file.lastPathSegment}")
-            var uploadTask = riversRef.putFile(file)
+            val file = Uri.fromFile(File(filePath!!))
 
-// Register observers to listen for when the download is done or if it fails
-            uploadTask.addOnFailureListener {
-                // Handle unsuccessful uploads
-                Log.d("thaonh", ":${it.message} ")
-            }.addOnSuccessListener { taskSnapshot ->
-                // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
+            val ref = storageRef.child("posts")
 
-                // ...
-                Log.d("thaonh", ":addOnSuccessListener ")
+            val uploadTask = ref.putFile(file)
+
+            uploadTask.continueWithTask { task ->
+                if (!task.isSuccessful) {
+                    task.exception?.let {
+                        throw it
+                    }
+                }
+                ref.downloadUrl
+            }.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val downloadUri = task.result
+                    listDownloadUri.add(downloadUri.toString())
+                } else {
+                    // Handle failures
+                    // ...
+                }
             }
+        }
+    }
 
-            // Handle the Intent
+    private fun getRealPathFromUri(context: Context, contentUri: Uri?): String? {
+        var cursor: Cursor? = null
+        return try {
+            val proj = arrayOf(MediaStore.Images.Media.DATA)
+            cursor = context.contentResolver.query(contentUri!!, proj, null, null, null)
+            val columnIndex: Int? = cursor?.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+            cursor?.moveToFirst()
+            cursor?.getString(columnIndex!!)
+        } finally {
+            cursor?.close()
         }
     }
 
