@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_register_birthday.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class RegisterBirthdayActivity : AppCompatActivity() {
+class BirthdayActivity : AppCompatActivity() {
 
     private var pvTime: DateTimePickerView? = null
     private var user : User? = null
@@ -34,7 +34,7 @@ class RegisterBirthdayActivity : AppCompatActivity() {
             user?.birthday = "14/12/1997"
             val bundle = Bundle()
             bundle.putSerializable(KEY_USER,user)
-            val i = Intent(this@RegisterBirthdayActivity, WhatYourGenderActivity::class.java)
+            val i = Intent(this@BirthdayActivity, WhatYourGenderActivity::class.java)
             i.putExtras(bundle)
             startActivity(i)
         }

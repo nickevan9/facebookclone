@@ -10,6 +10,7 @@
     app:layout_constraintStart_toStartOf="parent">
 
     <ImageView
+        android:id="@+id/iv_images"
         android:layout_width="0dp"
         android:layout_height="@dimen/_24sdp"
         android:layout_weight="1"
@@ -24,6 +25,7 @@
         android:src="@drawable/img_post_home_tag" />
 
     <ImageView
+        android:id="@+id/iv_emoji"
         android:layout_width="0dp"
         android:layout_height="@dimen/_24sdp"
         android:layout_weight="1"

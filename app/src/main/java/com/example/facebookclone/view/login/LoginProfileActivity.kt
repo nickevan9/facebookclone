@@ -21,7 +21,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_profile_login.*
 
-class ProfileLoginActivity : AppCompatActivity() {
+class LoginProfileActivity : AppCompatActivity() {
 
     private var profileAdapter: ProfileUserAdapter? = null
     private var listUser: List<UserSaved>? = null

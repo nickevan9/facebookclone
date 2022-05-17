@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container"
-    tools:context=".view.login.ProfileLoginActivity">
+    tools:context=".view.login.LoginProfileActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline30"

@@ -27,7 +27,7 @@ class WhatYourNameActivity:AppCompatActivity() {
                 val bundle = Bundle()
                 bundle.putSerializable(KEY_USER,user)
 
-                val i = Intent(this, RegisterBirthdayActivity::class.java)
+                val i = Intent(this, BirthdayActivity::class.java)
                 i.putExtras(bundle)
                 startActivity(i)
             }else{

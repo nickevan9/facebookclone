@@ -34,9 +34,6 @@ class LoginActivity : AppCompatActivity() {
             val i = Intent(this, JoinFacebookActivity::class.java)
             startActivity(i)
         }
-        btn_login.setOnClickListener() {
-
-        }
 
         tv_forgot_password.setOnClickListener {
             val j = Intent(this, ForgotPasswordMobileActivity::class.java)

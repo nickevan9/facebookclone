@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
 
     private fun initView(){
         tv_thinking_home.setOnClickListener {
-            val intent = Intent(this@HomeFragment.context, PostsHomeActivity::class.java)
+            val intent = Intent(this@HomeFragment.context, CreatePostsActivity::class.java)
             startActivity(intent)
         }
         initRecyclerView()

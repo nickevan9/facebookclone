@@ -6,12 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.facebookclone.R
-import com.example.facebookclone.database.UserDao
 import com.example.facebookclone.database.UserRepository
 import com.example.facebookclone.database.UserRoomDatabase
 import com.example.facebookclone.view.login.LoginActivity
-import com.example.facebookclone.view.login.ProfileLoginActivity
-import com.example.facebookclone.view.register.JoinFacebookActivity
+import com.example.facebookclone.view.login.LoginProfileActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     private var userRepository : UserRepository ?= null
@@ -31,7 +29,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         }else{
             Handler(Looper.getMainLooper()).postDelayed({
-                startActivity(Intent(SplashScreenActivity@this, ProfileLoginActivity::class.java))
+                startActivity(Intent(SplashScreenActivity@this, LoginProfileActivity::class.java))
                 finish()
             }, 2000)
             // dieu huong man chon user

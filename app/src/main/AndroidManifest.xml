@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.facebookclone" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.facebookclone">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -8,23 +13,36 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Facebookclone" >
+        android:theme="@style/Theme.Facebookclone"
+        tools:ignore="ExtraText">
         <activity
-            android:name=".view.mainscreen.screenhome.PickImagePost"
+            android:name=".view.mainscreen.screenhome.EmojiActionActivity"
             android:exported="false" />
         <activity
-            android:name=".view.mainscreen.screenhome.HomeBottomSheetActivity"
+            android:name=".view.mainscreen.screenhome.PickImagePostActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".view.mainscreen.screenhome.BottomSheetHomeActivity"
             android:exported="false" />
         <activity
             android:name=".view.mainscreen.screenhome.ObjectPostHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.mainscreen.screenhome.PostsHomeActivity"
-            android:exported="false" />
-
+            android:name=".view.mainscreen.screenhome.CreatePostsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".view.mainscreen.MainScreenActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,13 +51,13 @@
         </activity>
         <activity android:name=".view.register.CreateNewPasswordActivity" />
         <activity android:name=".view.register.OtpVerificationActivity" />
-        <activity android:name=".view.login.LoginActivity" />
-        <activity android:name=".view.register.RegisterBirthdayActivity" />
+        <activity android:name=".view.register.BirthdayActivity" />
         <activity
             android:name=".view.register.WhatYourNameActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".view.register.JoinFacebookActivity" />
-        <activity android:name=".view.login.ProfileLoginActivity" />
+        <activity android:name=".view.login.LoginActivity" />
+        <activity android:name=".view.login.LoginProfileActivity" />
         <activity android:name=".view.forgotpassword.ForgotPasswordEmailActivity" />
         <activity android:name=".view.forgotpassword.ForgotPasswordMobileActivity" />
         <activity

@@ -13,6 +13,7 @@
         android:background="@color/general_grey"/>
 
     <LinearLayout
+        android:id="@+id/ln_images"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/_6sdp"
@@ -26,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_12sdp"
-            android:text="Image/video"
+            android:text="@string/image_video"
             android:textSize="@dimen/_12ssp"
             android:textColor="@color/black_mode"
             android:layout_gravity="center_vertical"/>
@@ -49,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tag someone else"
+            android:text="@string/tag_someone_else"
             android:textSize="@dimen/_12ssp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:textColor="@color/black_mode"
@@ -61,6 +62,7 @@
         android:background="@color/general_grey"/>
 
     <LinearLayout
+        android:id="@+id/ln_emoji"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/_6sdp"
