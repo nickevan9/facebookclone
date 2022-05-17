@@ -10,13 +10,11 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.facebookclone.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -45,46 +43,12 @@ class CreatePostsActivity : AppCompatActivity() {
             et_thinking_pos.isCursorVisible = true
             card_menu.visibility = View.GONE
             ln_options_post_home.visibility = View.VISIBLE
-
-            val filePath = getRealPathFromUri(this,Uri.parse(data));
-
-            val file = Uri.fromFile(File(filePath!!))
-
-            val ref = storageRef.child("posts")
-
-            val uploadTask = ref.putFile(file)
-
-            uploadTask.continueWithTask { task ->
-                if (!task.isSuccessful) {
-                    task.exception?.let {
-                        throw it
-                    }
-                }
-                ref.downloadUrl
-            }.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val downloadUri = task.result
-                    listDownloadUri.add(downloadUri.toString())
-                } else {
-                    // Handle failures
-                    // ...
-                }
-            }
+            val filePath = getRealPathFromUri(this,Uri.parse(data))
+            uploadFile(filePath!!)
         }
     }
 
-    private fun getRealPathFromUri(context: Context, contentUri: Uri?): String? {
-        var cursor: Cursor? = null
-        return try {
-            val proj = arrayOf(MediaStore.Images.Media.DATA)
-            cursor = context.contentResolver.query(contentUri!!, proj, null, null, null)
-            val columnIndex: Int? = cursor?.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-            cursor?.moveToFirst()
-            cursor?.getString(columnIndex!!)
-        } finally {
-            cursor?.close()
-        }
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -167,11 +131,6 @@ class CreatePostsActivity : AppCompatActivity() {
         initBottomSheet()
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        et_thinking_pos.clearFocus();
-//        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-//    }
 
     private fun initBottomSheet(){
         bottomSheetBehavior = BottomSheetBehavior.from(card_menu)
@@ -201,31 +160,55 @@ class CreatePostsActivity : AppCompatActivity() {
         })
     }
 
-    private fun hideKeyboard(activity: Activity) {
-        val view = activity.currentFocus
-        val methodManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    private fun uploadFile(fileName : String){
+        val file = Uri.fromFile(File(fileName))
 
-        methodManager.hideSoftInputFromWindow(view!!.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        val ref = storageRef.child("posts")
 
+        val uploadTask = ref.putFile(file)
+
+        uploadTask.continueWithTask { task ->
+            if (!task.isSuccessful) {
+                task.exception?.let {
+                    throw it
+                }
+            }
+            ref.downloadUrl
+        }.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val downloadUri = task.result
+                listDownloadUri.add(downloadUri.toString())
+            } else {
+                // Handle failures
+                // ...
+            }
+        }
     }
 
-    fun hideSoftKeyboard(activity: Activity, view: View?) {
+
+    private fun hideSoftKeyboard(activity: Activity, view: View?) {
         val inputMethodManager = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
     }
 
-    private fun showKeyboard(activity: Activity) {
-        card_menu.isVisible = false
-        val view = activity.currentFocus
-        val methodManager = activity.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-    }
 
     private fun View.showKeyboard() {
         val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
     }
 
-
+    private fun getRealPathFromUri(context: Context, contentUri: Uri?): String? {
+        var cursor: Cursor? = null
+        return try {
+            val proj = arrayOf(MediaStore.Images.Media.DATA)
+            cursor = context.contentResolver.query(contentUri!!, proj, null, null, null)
+            val columnIndex: Int? = cursor?.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+            cursor?.moveToFirst()
+            cursor?.getString(columnIndex!!)
+        } finally {
+            cursor?.close()
+        }
+    }
 
 }
 
