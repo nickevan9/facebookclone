@@ -17,13 +17,21 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.facebookclone.R
+import com.example.facebookclone.utils.URL_PHOTO
+import com.example.facebookclone.utils.USER_NAME
+import com.example.facebookclone.view.dialog.LoadingDialog
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_create_post.*
+import kotlinx.android.synthetic.main.activity_create_post.container
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.layout_bottom_create_post.*
 import kotlinx.android.synthetic.main.layout_menu_bottom_create_post.*
 import java.io.File
+import java.io.IOException
+import java.lang.Exception
 
 
 class CreatePostsActivity : AppCompatActivity() {
@@ -31,6 +39,7 @@ class CreatePostsActivity : AppCompatActivity() {
     private var bottomSheetBehavior: BottomSheetBehavior<*>? = null
     private val storageRef = Firebase.storage.reference
     private val listDownloadUri = mutableListOf<String>()
+    private var loadingDialog: LoadingDialog? = null
 
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
@@ -59,6 +68,8 @@ class CreatePostsActivity : AppCompatActivity() {
 
     @SuppressLint("ResourceAsColor")
     private fun initView(){
+        atv_post.text = USER_NAME
+        //img_avatar
         ln_object_post.setOnClickListener {
             val intent =Intent(this,ObjectPostHomeActivity::class.java)
             startActivity(intent)
@@ -161,6 +172,8 @@ class CreatePostsActivity : AppCompatActivity() {
     }
 
     private fun uploadFile(fileName : String){
+        //loading
+        pb_image.visibility =  View.VISIBLE
         val file = Uri.fromFile(File(fileName))
 
         val ref = storageRef.child("posts")
@@ -170,7 +183,9 @@ class CreatePostsActivity : AppCompatActivity() {
         uploadTask.continueWithTask { task ->
             if (!task.isSuccessful) {
                 task.exception?.let {
-                    throw it
+                    pb_image.visibility =  View.GONE
+                    showSnackBar(it.message!!)
+
                 }
             }
             ref.downloadUrl
@@ -178,10 +193,18 @@ class CreatePostsActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 val downloadUri = task.result
                 listDownloadUri.add(downloadUri.toString())
+                pb_image.visibility =  View.GONE
             } else {
                 // Handle failures
                 // ...
+
             }
+        }
+
+        try{
+            // function throw ra exception
+        }catch (e : IOException){
+
         }
     }
 
@@ -210,5 +233,8 @@ class CreatePostsActivity : AppCompatActivity() {
         }
     }
 
+    private fun showSnackBar(message: String) {
+        Snackbar.make(container, message, Snackbar.LENGTH_LONG).show()
+    }
 }
 

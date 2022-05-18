@@ -4,7 +4,7 @@ import java.io.Serializable
 
 data class Post(
     var idPost: Int = 0,
-    var listFile : String ="",
+    var listFile : MutableList<String>,
     var typeFile : String = "",
     var likeTotal : Int = 0,
     var commentTotal : Int = 0,
